@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	control.Selenium1()
+	control.Register()
 }
