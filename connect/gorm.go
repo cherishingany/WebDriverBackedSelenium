@@ -1,5 +1,0 @@
-package connect
-
-func init() {
-
-}
