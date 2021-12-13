@@ -1,10 +1,10 @@
 package main
 
 import (
-	"awesomeProject2/control"
-	"awesomeProject2/service"
-	"awesomeProject2/until"
 	"fmt"
+	"webdriverbackedselenium/control"
+	"webdriverbackedselenium/service"
+	"webdriverbackedselenium/until"
 )
 
 func main() {

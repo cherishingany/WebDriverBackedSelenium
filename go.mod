@@ -1,4 +1,4 @@
-module awesomeProject2
+module webdriverbackedselenium
 
 go 1.16
 

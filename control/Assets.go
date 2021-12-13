@@ -1,9 +1,9 @@
 package control
 
 import (
-	"awesomeProject2/until"
 	"github.com/tebeka/selenium"
 	"time"
+	"webdriverbackedselenium/until"
 )
 
 func Assets(driver selenium.WebDriver) {
