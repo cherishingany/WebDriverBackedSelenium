@@ -3,25 +3,19 @@ package main
 import (
 	"awesomeProject2/control"
 	"awesomeProject2/service"
+	"awesomeProject2/until"
 	"fmt"
-
 )
 
 func main() {
 	fmt.Println("hello go ")
 	startWebDriver := service.StartWebDriver()
+
 	defer startWebDriver.Stop()
+	driver := service.RemoteDriver()
 
-	control.Assets()
+	until.TimeSleep()
+	//control.Assets(driver)
 
-	//	group := sync.WaitGroup{}
-	//	group.Add(1)
-	//
-	//	func() {
-	//		go control.Assets()
-	//		group.Wait()
-	//	}()
-	//
-	//	group.Done()
-	//
+	control.Login(driver)
 }

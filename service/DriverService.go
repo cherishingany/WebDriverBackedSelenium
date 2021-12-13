@@ -18,7 +18,7 @@ func StartWebDriver() *selenium.Service {
 	//    selenium.StartFrameBuffer(),           // Start an X frame buffer for the browser to run in.
 	//    selenium.GeckoDriver(geckoDriverPath), // Specify the path to GeckoDriver in order to use Firefox.
 	//}
-	//selenium.SetDebug(true)
+	//selenium.SetDebug(false)
 	service, err := selenium.NewChromeDriverService(SeleniumPath, PORT, opts...)
 	if nil != err {
 		fmt.Println("start a chromedriver service falid", err.Error())

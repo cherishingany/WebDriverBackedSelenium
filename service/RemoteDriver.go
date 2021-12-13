@@ -32,7 +32,7 @@ func RemoteDriver() selenium.WebDriver {
 	//调起chrome浏览器
 	driver, err := selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", PORT))
 	if err != nil {
-		fmt.Println("connect to the webDriver faild", err.Error())
+		fmt.Println("connect to the webDriver failed", err.Error())
 		panic(err)
 	}
 
