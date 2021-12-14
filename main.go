@@ -15,7 +15,7 @@ func main() {
 	driver := service.RemoteDriver()
 
 	until.TimeSleep()
-	//control.Assets(driver)
+	control.Assets(driver)
 
-	control.Login(driver)
+	//control.Login(driver)
 }

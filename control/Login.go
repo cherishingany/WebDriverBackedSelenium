@@ -3,7 +3,7 @@ package control
 import (
 	"fmt"
 	"github.com/tebeka/selenium"
-	"time"
+	"webdriverbackedselenium/until"
 )
 
 func Login(driver selenium.WebDriver) {
@@ -13,29 +13,17 @@ func Login(driver selenium.WebDriver) {
 		fmt.Println("you connect error:  ", err.Error())
 		return
 	}
-	//WebElements, err := driver.FindElements(selenium.ByCSSSelector, "div.ant-form-item-control-input-content > input")
-	//for _, values := range WebElements {
-	//	s, _ := values.Text()
-	//	fmt.Println(s)
-	//	values.SendKeys("11")
-	//}
 
-	//
-
-	time.Sleep(1 * time.Second)
-
-	//
-	//elem.SendKeys("1")
-	//
-	//elem, err = driver.FindElement(selenium.ByXPATH, "//*[@id=\"password\"]")
-	//
-	////element.SendKeys(selenium.ControlKey + "t")
-	//_ = elem.SendKeys("zwq")
-	//
-	driver.ExecuteScriptRaw("document.getElementById(\"loginId\").value = \"zwq\"", nil)
-	driver.ExecuteScriptRaw("document.getElementById(\"password\").value = \"1\"", nil)
-	time.Sleep(1 * time.Second)
 	elem, err := driver.FindElement(selenium.ByXPATH, "//*[@id=\"loginId\"]")
-	elem.SendKeys(selenium.EnterKey)
+	_ = elem.SendKeys("zwq")
+
+	elem, err = driver.FindElement(selenium.ByXPATH, "//*[@id=\"password\"]")
+	_ = elem.SendKeys("1")
+	_ = elem.SendKeys(selenium.EnterKey)
+
+	until.TimeSleep()
+
+	//driver.ExecuteScriptRaw("document.getElementById(\"loginId\").value = \"zwq\"", nil)
+	//driver.ExecuteScriptRaw("document.getElementById(\"password\").value = \"1\"", nil)
 
 }

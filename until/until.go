@@ -36,7 +36,7 @@ func ClickEvent(driver selenium.WebDriver, by, value string) {
 	if err != nil {
 		panic(err)
 	}
-	time.Sleep(3 * time.Second)
+	time.Sleep(2 * time.Second)
 
 }
 
@@ -57,5 +57,5 @@ func RandomValues(WebElements []selenium.WebElement) {
 	fmt.Println("此次生成的随机数为: ", x)
 
 	WebElements[x].Click()
-
+	TimeSleep()
 }
