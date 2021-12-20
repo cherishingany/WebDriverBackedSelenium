@@ -18,5 +18,8 @@ func main() {
 
 	//control.Login(driver)
 	//control.UserRegister(driver)
-	control.Assets(driver)
+	//control.Assets(driver)
+
+	control.ChooseFile(driver)
+
 }
