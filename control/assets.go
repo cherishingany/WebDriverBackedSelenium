@@ -5,7 +5,7 @@ import (
 	"github.com/tebeka/selenium"
 	"time"
 	"webdriverbackedselenium/menus"
-	"webdriverbackedselenium/until"
+	"webdriverbackedselenium/util"
 )
 
 func Assets(driver selenium.WebDriver) {
@@ -15,8 +15,8 @@ func Assets(driver selenium.WebDriver) {
 	}()
 
 	Login(driver)
-	until.Windows(driver)
-	until.TimeSleep()
+	util.Windows(driver)
+	util.TimeSleep()
 	//进入增加资产
 	elem, _ := driver.FindElement(selenium.ByXPATH, "//*[@id=\"root\"]/div/section/section/main/div[2]/div/div/div/div[1]/div[2]/button")
 	//
@@ -46,39 +46,39 @@ func Assets(driver selenium.WebDriver) {
 
 	elems, _ := driver.FindElements(selenium.ByCSSSelector, s2)
 
-	until.RandomValues(elems)
+	util.RandomValues(elems)
 
 	//分类
-	until.ClickEvent(driver, selenium.ByXPATH, "//*[@id=\"rc-tabs-0-panel-canvas1606645094414_tabgroup_62_tab_2\"]/div[1]/div/div[1]/div/div[5]/div/div[2]/div/div/div[1]/div/div/div/span/span/span/span/span")
-	until.ClickEvent(driver, selenium.ByCSSSelector, "li.ant-dropdown-menu-item")
-	until.TimeSleep()
+	util.ClickEvent(driver, selenium.ByXPATH, "//*[@id=\"rc-tabs-0-panel-canvas1606645094414_tabgroup_62_tab_2\"]/div[1]/div/div[1]/div/div[5]/div/div[2]/div/div/div[1]/div/div/div/span/span/span/span/span")
+	util.ClickEvent(driver, selenium.ByCSSSelector, "li.ant-dropdown-menu-item")
+	util.TimeSleep()
 
 	WebElement, _ = driver.FindElements(selenium.ByCSSSelector, " span.ant-tree-node-content-wrapper.ant-tree-node-content-wrapper-close > span.ant-tree-title")
 
 	for index, _ := range WebElement {
 		if index == 2 {
 			WebElement[2].Click()
-			until.TimeSleep()
+			util.TimeSleep()
 		}
 
 	}
 
-	//until.RandomValues(WebElement)
+	//util.RandomValues(WebElement)
 	//变更状态 - BUG
 	//s1 := "//*[@id=\"root\"]/div/section/section/main/div[2]/div/div/div/div[1]/div[2]/button[6]"
 	//
 	//elem, _ = driver.FindElement(selenium.ByXPATH, s1)
 	//elem.Click()
 	//
-	//until.TimeSleep()
+	//util.TimeSleep()
 	//
 	//s1 = "/html/body/div[1]/div/section/section/main/div[2]/div/div/div/div[1]/div[2]/button[6]\n"
 	//
 	//elem, _ = driver.FindElement(selenium.ByXPATH, s1)
 	//elem.Click()
 	//
-	//until.TimeSleep()
-	//until.TimeSleep()
+	//util.TimeSleep()
+	//util.TimeSleep()
 	////第一层div   "ant-select-show-search"
 	//s2 = "/html/body/div[1]/div/section/section/main/div[2]/div/div/div/div[13]/div[2]/div/div[2]/div[2]/form/div[1]/div/div[2]/div/div/div"
 	//elem, _ = driver.FindElement(selenium.ByXPATH, s2)
@@ -99,7 +99,7 @@ func Assets(driver selenium.WebDriver) {
 	for index, values := range ws {
 		if index == menus.Save {
 			values.Click()
-			until.TimeSleep()
+			util.TimeSleep()
 		}
 
 	}

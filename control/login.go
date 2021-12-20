@@ -3,7 +3,7 @@ package control
 import (
 	"fmt"
 	"github.com/tebeka/selenium"
-	"webdriverbackedselenium/until"
+	"webdriverbackedselenium/util"
 )
 
 func Login(driver selenium.WebDriver) {
@@ -21,7 +21,7 @@ func Login(driver selenium.WebDriver) {
 	_ = elem.SendKeys("1")
 	_ = elem.SendKeys(selenium.EnterKey)
 
-	until.TimeSleep()
+	util.TimeSleep()
 
 	//driver.ExecuteScriptRaw("document.getElementById(\"loginId\").value = \"zwq\"", nil)
 	//driver.ExecuteScriptRaw("document.getElementById(\"password\").value = \"1\"", nil)
